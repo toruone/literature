@@ -1,17 +1,19 @@
 class WorksController < ApplicationController
-  before_action :set_restaurant, only: [:edit, :show, :update, :destroy]
+  before_action :set_work, only: [:edit, :show, :update, :destroy]
 
   def show
   end
 
   def index
+    @works = Work.all
   end
 
   def new
+    @work = Work.new
   end
 
   def create
-    @work = Work.new(restaurant_params)
+    @work = Work.new(work_params)
     if @work.save
       redirect_to works_path
     else
@@ -24,7 +26,7 @@ class WorksController < ApplicationController
 
   def update
       if @work.update(work_params)
-        redirect_to restaurants_path(@work)
+        redirect_to works_path(@work)
       else
         render "edit"
       end
@@ -40,6 +42,17 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
   end
 
+  def work_params
+    params[:work].permit(
+      :title,
+      :release,
+      :author,
+      :description,
+      :author_id,
+      :image,
+      :remove_image,
+    )
+  end
 
 
 

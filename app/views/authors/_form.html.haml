@@ -1,0 +1,7 @@
+=bootstrap_form_with model: @work, local: true do |f|
+  =f.text_field :title
+  =f.text_field :author
+  =f.text_field :release
+  =f.text_field :description
+  =f.file_field :image
+  =f.submit class: "btn btn-success"
