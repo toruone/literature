@@ -10,6 +10,7 @@ class WorksController < ApplicationController
 
   def new
     @work = Work.new
+    @work.author_id = params[:author_id] if params[:author_id].present?
   end
 
   def create

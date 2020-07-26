@@ -1,15 +1,9 @@
--@works.each do|work|
-  ="Work："
-  =link_to work.title, work_path(work)
+-@authors.each do|author|
+  ="Name："
+  =link_to author.name, author_path(author)
   %br
-  ="Author："
-  =work.author
+  ="from："
+  =author.from
   %br
-  ="Release："
-  =work.release
-  %br
-  ="Description："
-  =work.description
-  %hr
 
-=link_to "Create New Work", new_work_path
+=link_to "Create New Author", new_author_path
