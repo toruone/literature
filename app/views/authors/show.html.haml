@@ -5,3 +5,25 @@
 =link_to "Back to Index", authors_path
 =link_to "Edit", edit_author_path(@author)
 =link_to "Delete", author_path(@author), method: :delete, data: {confirm: "Are you sure？"}
+
+%main#main
+  / ======= Portfolio Details =======
+  #portfolio-details.portfolio-details
+    .container
+      .row
+        .col-lg-8
+          %h2.portfolio-title Author's Detail
+          .owl-carousel.portfolio-details-carousel
+            =image_tag @author.image_url, class: 'img-fluid'
+            -# %img.img-fluid{:alt => "", :src => "assets/img/portfolio/portfolio-details-1.jpg"}/
+        .col-lg-4.portfolio-info
+          %h3=@author.name
+          %ul
+            %li
+              %strong> From
+              \:
+              =@author.from
+
+          %p
+          %p
+          =link_to "Back to Index", authors_path

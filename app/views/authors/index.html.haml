@@ -1,9 +1,36 @@
--@authors.each do|author|
-  ="Name："
-  =link_to author.name, author_path(author)
-  %br
-  ="from："
-  =author.from
-  %br
+-# -@authors.each do|author|
+-#   ="Name："
+-#   =link_to author.name, author_path(author)
+-#   %br
+-#   ="from："
+-#   =author.from
+-#   %br
+-#
+-# =link_to "Create New Author", new_author_path
 
-=link_to "Create New Author", new_author_path
+%section#portfolio.portfolio
+  .container
+    .section-title
+      %h2 Portfolio
+      %p Author List
+    .row
+      .col-lg-12.d-flex.justify-content-center
+        %ul#portfolio-flters
+          %li.filter-active{"data-filter" => "*"} All
+          %li{"data-filter" => ".filter-app"} App
+          %li{"data-filter" => ".filter-card"} Card
+          %li{"data-filter" => ".filter-web"} Web
+
+      -@authors.each do|author|
+        .col-lg-4.col-md-6.portfolio-item.filter-web
+          .portfolio-wrap
+            =image_tag author.image_url(:thumb), class: 'img-fluid'
+            -# %img.img-fluid{:alt => "", :src => "assets/img/portfolio/portfolio-2.jpg"}/
+            .portfolio-info
+              %h4=link_to author.name, author_path(author)
+              %p=author.from
+              .portfolio-links
+                %a.venobox{"data-gall" => "portfolioGallery", :href => "assets/img/portfolio/portfolio-2.jpg", :title => "Web 3"}
+                  %i.bx.bx-plus
+                %a.venobox{"data-gall" => "portfolioDetailsGallery", "data-vbtype" => "iframe", :href => "portfolio-details.html", :title => "Portfolio Details"}
+                  %i.bx.bx-link

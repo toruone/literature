@@ -1,9 +1,45 @@
-=@work.title
-=@work.author.name
-=@work.release
-=@work.description
+-# =@work.title
+-# =@work.author.name
+-# =@work.release
+-# =@work.description
+-#
+-# =link_to "Back to Index", works_path
+-# =link_to "Edit", edit_work_path(@work)
+-# =link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure？"}
+-# =link_to "Add new Work", new_work_path(author_id: @author.id)
 
-=link_to "Back to Index", works_path
-=link_to "Edit", edit_work_path(@work)
-=link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure？"}
-=link_to "Add new Work", new_work_path(author_id: @author.id)
+%main#main
+  / ======= Portfolio Details =======
+  #portfolio-details.portfolio-details
+    .container
+      .row
+        .col-lg-8
+          %h2.portfolio-title Work's Detail
+          .owl-carousel.portfolio-details-carousel
+            =image_tag @work.image_url, class: 'img-fluid'
+            -# %img.img-fluid{:alt => "", :src => "assets/img/portfolio/portfolio-details-1.jpg"}/
+        .col-lg-4.portfolio-info
+          %h3=@work.title
+          %ul
+            %li
+              %strong> Author
+              \:
+              =link_to @work.author.name, author_path(@work.author)
+            %li
+              %strong> Release
+              \:
+              =@work.release
+            %li
+              %strong> description
+              \:
+              =@work.description
+            %p
+            %p   
+            =link_to "Back to Index", works_path
+
+          -#   %li
+          -#     %strong> Project URL
+          -#     \:
+          -#     %a{:href => "#"} www.example.com
+          -# %p
+          -#   Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
