@@ -1,10 +1,10 @@
-=@author.name
-=@author.from
-
-
-=link_to "Back to Index", authors_path
-=link_to "Edit", edit_author_path(@author)
-=link_to "Delete", author_path(@author), method: :delete, data: {confirm: "Are you sure？"}
+-# =@author.name
+-# =@author.from
+-#
+-#
+-# =link_to "Back to Index", authors_path
+-# =link_to "Edit", edit_author_path(@author)
+-# =link_to "Delete", author_path(@author), method: :delete, data: {confirm: "Are you sure？"}
 
 %main#main
   / ======= Portfolio Details =======
@@ -27,3 +27,5 @@
           %p
           %p
           =link_to "Back to Index", authors_path
+          %p
+          =link_to "Delete", author_path(@author), method: :delete, data: {confirm: "Are you sure？"}

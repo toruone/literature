@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+gem "font-awesome-rails"
+gem 'pry-rails'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'owlcarousel-rails'
@@ -34,6 +36,8 @@ gem 'bootstrap_form'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'cloudinary'
+gem 'fog'
 
 
 group :development, :test do

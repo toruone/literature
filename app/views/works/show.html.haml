@@ -6,7 +6,7 @@
 -# =link_to "Back to Index", works_path
 -# =link_to "Edit", edit_work_path(@work)
 -# =link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure？"}
--# =link_to "Add new Work", new_work_path(author_id: @author.id)
+-# =link_to "Add new Work", new_work_path
 
 %main#main
   / ======= Portfolio Details =======
@@ -34,9 +34,9 @@
               \:
               =@work.description
             %p
-            %p   
+            %p
             =link_to "Back to Index", works_path
-
+            =link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure？"}
           -#   %li
           -#     %strong> Project URL
           -#     \:
